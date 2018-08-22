@@ -8,6 +8,9 @@
 ####    a master table for use in R ####
 ########################################
 
+This is unfinsihed and does not complete the job. 
+Use instead "extract_columns.sh". 
+This script will be updated and used for a similar job shortly.
 
 #!/bin/bash
 #for f in ./*_bin_clin/pheno.txt; do 
