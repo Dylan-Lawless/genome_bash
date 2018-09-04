@@ -1,0 +1,41 @@
+Some tips for new users
+
+1. monitor activity:
+$ htop
+quit: $ q
+(https://codeahoy.com/2017/01/20/hhtop-explained-visually/)
+
+2. List the sizes used and availability on the file system in a human readable format (Note /data).
+$ df -h
+
+3. See your files and directory sizes
+In your data directory:
+$ du -sh
+
+A better breakdown from your current directory:
+$ du -a -h --max-depth=1 | sort -hr
+
+or from anywhere:
+$ du -a -h --max-depth=1 /data/username/ | sort -hr
+
+4. Transfer files/folders
+While logged into the server this sends the folder:
+$ rsync -avz -P  /data/username/importnat_folder uni_username@ComputerName.universityaddress:/Users/uni_username/Desktop/
+
+note: a trailing slash in the source (../temp/) will send all the files individually which you probably don’t want.
+
+Very fast:
+https://gist.github.com/KartikTalwar/4393116
+rsync -aHAXv -e "ssh -T -o Compression=no -x" user@<source>:<source_dir> <dest_dir>
+
+5. Current users and processes
+$ w
+
+6. Stephen Turner's bash oneliners
+https://github.com/stephenturner/oneliners
+
+7. Tmux for detachable sessions and long jobs. Be careful not to nest sessions, and practice on you local machine to learn keybindings and how to find/kill sessions. If you are used to brew; brew install tmux.
+Cheatsheet: https://www.cheatography.com/thecultofkaos/cheat-sheets/tmux-basics/
+Basic configuration file to make tmux usable and logical: https://github.com/DylanLawless/tmux/blob/master/tmux.conf
+Copy this or (or better, write it yourself to familiarise) to ~/tmux.conf
+(window splitting and Set prefix to Ctrl-a are most intuitive). 
