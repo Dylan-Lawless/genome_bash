@@ -1,0 +1,38 @@
+How to get coordinates for a gene list:
+
+Use Biomart. e.g. via Ensembl, data access section:
+http://www.ensembl.org/info/data/biomart/index.html
+
+The use the BioMart data mining tool
+http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44
+
+For the positions using GRCh37 (rather than 38): 
+http://www.ensembl.org/info/website/tutorials/grch37.html
+
+to get to 
+http://grch37.ensembl.org/index.html
+
+then the Biomart section
+http://grch37.ensembl.org/biomart/martview/04f009257dadbafbe595155ba910eb5e
+
+Choose DataBase: Genes 93
+Dataset: Human 
+Filter -> Gene -> Input external ref ID list -> (change dropdown) Gene Name
+paste list
+e.g.
+VPS45
+PSMB8
+BLNK
+NEFL
+NLRP7
+SMAD4
+PSMB9
+
+To set the output type:
+Attributes -> Gene ->  select “gene start”, “gene stop”, “gene name”, or anything extra. 
+
+Select the “Results” button at the top and export. 
+
+The results can be tsv or csv.
+For most uses the list needs to be converted to a bed file or txt file with one interval per line in the format:  X:1-2000
+The list also needs to be in order by number and alphabetic. 
